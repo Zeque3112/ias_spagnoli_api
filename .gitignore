@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pyc
+*.pym
+.pytest_cache/
+.pyre/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime files
+*.log
+*.pot
+*.mo
+*.pid
+*.sqlite3
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# dotenv files
+.env
+
+# Flask instance folder
+instance/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# mypy
+.mypy_cache/
+
+# Coverage
+htmlcov/
+coverage.xml
+.coverage
+.coverage.*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDE / project files
+*.iml
+*.ipr
+*.iws
+
+# pytest
+.cache/
+
+# local secrets
+credentials.json
+
+# compiled C extensions
+*.so
+*.dylib
+
+# package manager
+pip-wheel-metadata/
