@@ -41,7 +41,6 @@ dist/
 
 # dotenv files
 .env
-.env.*
 
 # Flask instance folder
 instance/
