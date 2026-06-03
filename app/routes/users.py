@@ -10,7 +10,11 @@ user_bp = Blueprint('users', __name__)
 
 @user_bp.route('/users', methods=['GET'])
 def gett_all_users():
-    return jsonify(get_users()), 200
+    users = get_users()
+
+    return jsonify(
+        [user.to_dict() for user in users]
+    ), 200
 
 @user_bp.route('/users', methods=['POST'])
 def create_new_user():
@@ -22,7 +26,10 @@ def create_new_user():
         }), 400
     
     user = create_user(data['name'])
-    return jsonify(user), 201
+
+    return jsonify(
+        user.to_dict()
+    ), 201
 
 @user_bp.route('/users/<int:user_id>', methods=['DELETE'])
 def remove_user(user_id):

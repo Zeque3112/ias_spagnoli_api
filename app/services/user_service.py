@@ -1,21 +1,29 @@
-from app.models.user import users
+from app.models.user import User
+from app.db import db
 
 def get_users():
-    return users
+    return User.query.all()
 
-def create_user(name: str):
-    user = {
-        "id": len(users) + 1,
-        "name": name
-    }
+def create_user(name):
 
-    users.append(user)
+    user = User(name=name)
+
+    db.session.add(user)
+    db.session.commit()
+
     return user
 
-def delete_user(user_id: int):
-    for user in users:
-        if user["id"] == user_id:
-            users.remove(user)
-            return True
-        
-    return False
+from app.models.user import User
+from app.db import db
+
+def delete_user(user_id):
+
+    user = db.session.get(User, user_id)
+
+    if not user:
+        return False
+
+    db.session.delete(user)
+    db.session.commit()
+
+    return True
