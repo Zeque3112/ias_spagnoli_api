@@ -1,15 +1,26 @@
 import pytest
 
+from app.db import db
 from app.init import create_app
-from app.models.user import users
+from app.config import TestConfig
+
 
 @pytest.fixture
-def client():
-    app = create_app()
+def app():
 
-    with app.test_client() as client:
-        yield client
+    app = create_app(TestConfig)
+
+    with app.app_context():
+
+        db.create_all()
+
+        yield app
+
+        db.session.remove()
+        db.drop_all()
+
 
 @pytest.fixture
-def clear_users():
-    users.clear()
+def client(app):
+
+    return app.test_client()
