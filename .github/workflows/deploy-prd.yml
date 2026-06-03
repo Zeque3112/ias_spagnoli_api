@@ -7,7 +7,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    enviroment:
+    environment:
       name: prd
 
     steps:
