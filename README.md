@@ -1,2 +1,2 @@
 # ias_spagnoli_api
-Repositorio para elaborar el trabajo práctico de la materia "Implementación y Actualización de Software"
+Proyecto universitario para emplear metodología CI/CD y para configurar pipelines de GitHub vinculadas con Render
